@@ -10,7 +10,9 @@ namespace ADO.NET
 	class Program
 	{
 		static void Main(string[] args)
-		{   // 1 Берем строку подключения:
+		{
+#if INTRO
+			// 1 Берем строку подключения:
 			const int PADDING = 30;
 			const string CONNECTION_STRING = "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=Movies;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
 			Console.WriteLine(CONNECTION_STRING);
@@ -48,6 +50,16 @@ namespace ADO.NET
 			// 6 Закрываем SqlDataReader
 			reader.Close();
 			connection.Close();
+		 
+#endif
+
+			//Connector.Select("*", "Directors");
+			//Connector.Select("title,release_date,FORMATMESSAGE(N'%s %s',first_name,last_name)", "Movies,Directors", "director=director_id");
+			//Connector.InsertMovie("Terminator 5 - Genesis", "2015-06-22", "1");
+			Connector.InsertDirector("Deorge","Martin");
+			Connector.SelectDirectors();
+			Connector.SelectMovies();
+
 		}
 	}
 }
