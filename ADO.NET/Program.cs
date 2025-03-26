@@ -14,19 +14,19 @@ namespace ADO.NET
 			const int PADDING = 30;
 			const string CONNECTION_STRING = "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=Movies;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
 			Console.WriteLine(CONNECTION_STRING);
-			//2) Создаем подключение к серверу:
+			// 2 Создаем подключение:
 			SqlConnection connection = new SqlConnection(CONNECTION_STRING);
-			//На данный момент подключение является закрытым, мы его не открывали, а только создали.
+			// На данный момент подключение является закрытым, мы его не открывали, а только создали.
 
-			//3) Создаем команду, которую нужно выполнить на сервере:
+			// 3 Создаем команду, которую нужно выполнить на сервере:
 			string cmd = "SELECT title,release_date,FORMATMESSAGE(N'%s %s',first_name,last_name) FROM Movies,Directors WHERE director=director_id";
 			SqlCommand command = new SqlCommand(cmd, connection);
 
-			//4) Получаем результаты выполнения команды:
+			// 4 Получаем результаты выполнения команды:
 			connection.Open();
 			SqlDataReader reader = command.ExecuteReader();
 
-			//5) Обрабатываем результаты запроса:
+			// 5 Обрабатываем результаты опроса:
 			if (reader.HasRows)
 			{
 				Console.WriteLine("===================================================================================");
