@@ -14,9 +14,6 @@ namespace ExternalBase
 			Console.WriteLine("---------------------------------");
 			Console.WriteLine(Connector.ReturnDisciplineID("JavaScript"));
 			Console.WriteLine(Connector.ReturnDisciplineID("NodeJS"));
-			Console.WriteLine("---------------------------------");
-			Console.WriteLine(Connector.Count("Disciplines"));
-			Console.WriteLine("---------------------------------");
 
 			Connector.Select("*", "Teachers");
 			Console.WriteLine("---------------------------------");
