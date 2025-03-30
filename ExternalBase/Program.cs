@@ -17,13 +17,15 @@ namespace ExternalBase
 			Console.WriteLine("---------------------------------");
 			Console.WriteLine(Connector.Count("Disciplines"));
 			Console.WriteLine("---------------------------------");
+
 			Connector.Select("*", "Teachers");
 			Console.WriteLine("---------------------------------");
-			Console.WriteLine(Connector.ReturnTeacherID("Свищев"));
-			Console.WriteLine(Connector.ReturnTeacherID("Лялька"));
+			Console.WriteLine(Connector.ReturnTeacherID("Ковтун"));
+			Console.WriteLine(Connector.ReturnTeacherID("Глазунов"));
 			Console.WriteLine("---------------------------------");
 			Console.WriteLine(Connector.Count("Teachers"));
 			Console.WriteLine("---------------------------------");
+
 			Connector.Select("*", "Students");
 			Console.WriteLine("---------------------------------");
 			Console.WriteLine(Connector.Count("Students"));
