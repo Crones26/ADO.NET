@@ -28,6 +28,25 @@ namespace Academy
 		{
 			FreeConsole();
 		}
+		public Dictionary<string, int> GetDictionary(string columns, string tables, string condition = "")
+		{
+			Dictionary<string, int> values = new Dictionary<string, int>();
+			string cmd = $"SELECT {columns} FROM {tables}";
+			if (condition != "") cmd += $" WHERE {condition}";
+			SqlCommand command = new SqlCommand(cmd, connection);
+			connection.Open();
+			SqlDataReader reader = command.ExecuteReader();
+			if (reader.HasRows)
+			{
+				while (reader.Read())
+				{
+					values[reader[1].ToString()] = Convert.ToInt32(reader[0]);
+				}
+			}
+			reader.Close();
+			connection.Close();
+			return values;
+		}
 		public DataTable Select(string columns, string tables, string condition = "", string group_by = "")
 		{
 			DataTable table = null;
