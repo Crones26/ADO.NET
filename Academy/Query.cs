@@ -12,7 +12,6 @@ namespace Academy
 		public string Tables { get; }
 		public string Condition { get; set; }
 		public string Group_by { get; }
-
 		public Query(string columns, string tables, string condition = "", string group_by = "")
 		{
 			Columns = columns;
