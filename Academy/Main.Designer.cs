@@ -169,15 +169,7 @@
 			this.tabPageDirections.TabIndex = 2;
 			this.tabPageDirections.Text = "Directions";
 			this.tabPageDirections.UseVisualStyleBackColor = true;
-			// 
-			// cbShowEmptyDirections
-			// 
-			this.cbShowEmptyDirections = new System.Windows.Forms.CheckBox();
-			this.cbShowEmptyDirections.Text = "Показать пустые направления";
-			this.cbShowEmptyDirections.AutoSize = true;
-			this.cbShowEmptyDirections.Location = new System.Drawing.Point(10, 10);
-			this.cbShowEmptyDirections.CheckedChanged += new System.EventHandler(this.cbShowEmptyDirections_CheckedChanged);
-			this.tabPageDirections.Controls.Add(this.cbShowEmptyDirections);
+
 			// 
 			// dgvDirections
 			// 
