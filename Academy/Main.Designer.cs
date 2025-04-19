@@ -57,6 +57,7 @@
 			this.tabPageTeachers.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dgvTeachers)).BeginInit();
 			this.SuspendLayout();
+			this.cbStudentsGroup.SelectedIndexChanged += new System.EventHandler(this.cbStudentsGroup_SelectedIndexChanged);
 			// 
 			// statusStrip
 			// 
@@ -141,6 +142,8 @@
 			this.cbGroupsDirection.Size = new System.Drawing.Size(559, 24);
 			this.cbGroupsDirection.TabIndex = 1;
 			//this.cbGroupsDirection.SelectedIndexChanged += new System.EventHandler(this.cbGroupsDirection_SelectedIndexChanged);
+			this.cbStudentsDirection.SelectedIndexChanged += new System.EventHandler(this.cbStudentsDirection_SelectedIndexChanged);
+			this.cbStudentsGroup.SelectedIndexChanged += new System.EventHandler(this.cbStudentsGroup_SelectedIndexChanged);
 			// 
 			// dgvGroups
 			// 
@@ -166,6 +169,15 @@
 			this.tabPageDirections.TabIndex = 2;
 			this.tabPageDirections.Text = "Directions";
 			this.tabPageDirections.UseVisualStyleBackColor = true;
+			// 
+			// cbShowEmptyDirections
+			// 
+			this.cbShowEmptyDirections = new System.Windows.Forms.CheckBox();
+			this.cbShowEmptyDirections.Text = "Показать пустые направления";
+			this.cbShowEmptyDirections.AutoSize = true;
+			this.cbShowEmptyDirections.Location = new System.Drawing.Point(10, 10);
+			this.cbShowEmptyDirections.CheckedChanged += new System.EventHandler(this.cbShowEmptyDirections_CheckedChanged);
+			this.tabPageDirections.Controls.Add(this.cbShowEmptyDirections);
 			// 
 			// dgvDirections
 			// 
@@ -248,7 +260,8 @@
 			this.cbStudentsDirection.Size = new System.Drawing.Size(386, 24);
 			this.cbStudentsDirection.TabIndex = 2;
 			this.cbStudentsDirection.SelectedIndexChanged += new System.EventHandler(this.cbStudentsDirection_SelectedIndexChanged);
-			
+			this.cbStudentsGroup.SelectedIndexChanged += new System.EventHandler(this.cbStudentsGroup_SelectedIndexChanged);
+
 			// 
 			// Main
 			// 
@@ -297,6 +310,7 @@
 		private System.Windows.Forms.ComboBox cbGroupsDirection;
 		private System.Windows.Forms.ComboBox cbStudentsDirection;
 		private System.Windows.Forms.ComboBox cbStudentsGroup;
+		private System.Windows.Forms.CheckBox cbShowEmptyDirections;
 	}
 }
 
